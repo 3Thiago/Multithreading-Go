@@ -1,0 +1,3 @@
+###
+
+GET http://localhost:8000/consulta/28922-340 HTTP/1.1
