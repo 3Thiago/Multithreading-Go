@@ -1,5 +1,5 @@
-# Multithreading-Go
-Challanger Full Cycle Multtheading with golang
+# Multithreading-Go API
+Challanger Full Cycle API Multtheading with golang
 
 # How to run?
 ```
