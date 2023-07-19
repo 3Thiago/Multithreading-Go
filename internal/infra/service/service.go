@@ -25,6 +25,7 @@ func (s *ServiceInfra) GetCep(cep string) (any, error) {
 		logrus.Fatal(err)
 	}
 	go func() {
+		//time.Sleep(2 * time.Second)
 		resp, err := s.servicePkg.GetViaCep(cep)
 		if err != nil {
 			logrus.Print(err)
@@ -32,6 +33,7 @@ func (s *ServiceInfra) GetCep(cep string) (any, error) {
 		ch1 <- *resp
 	}()
 	go func() {
+		//time.Sleep(1 * time.Second)
 		resp, err := s.servicePkg.GetApiCep(cep)
 		if err != nil {
 			logrus.Print(err)
@@ -43,7 +45,7 @@ func (s *ServiceInfra) GetCep(cep string) (any, error) {
 		logrus.Printf(" Resquest ViaCep: %s", viaCepResponse)
 		return viaCepResponse, nil
 	case apiCepResponse := <-ch2:
-		logrus.Printf(" Resquest ApiCep: %s", apiCepResponse)
+		logrus.Printf(" Resquest BrasilApi: %s", apiCepResponse)
 		return apiCepResponse, nil
 	case <-time.After(1 * time.Second):
 		logrus.Print("Timeout")

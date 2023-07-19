@@ -14,13 +14,10 @@ type ViaCep struct {
 }
 
 type ApiCep struct {
-	Code       string `json:"code"`
-	State      string `json:"state"`
-	City       string `json:"city"`
-	District   string `json:"district"`
-	Address    string `json:"address"`
-	Status     int    `json:"status"`
-	Ok         bool   `json:"ok"`
-	Message    string `json:"message"`
-	StatusText string `json:"statusText"`
+	Cep          string `json:"code"`
+	State        string `json:"state"`
+	City         string `json:"city"`
+	Neighborhood string `json:"neighborhood"`
+	Street       string `json:"street"`
+	Service      string `json:"service"`
 }
